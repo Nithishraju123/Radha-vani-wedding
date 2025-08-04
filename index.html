@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ℛ𝒶𝒹𝒽𝒶 𝒦𝓇𝒾𝓈𝒽𝓃𝒶 𝒲𝑒𝒹𝒹𝒾𝓃𝑔</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Add in <head> -->
+    <script src="https://cdn.jsdelivr.net/npm/@srexi/purecounterjs/dist/purecounter_vanilla.js"></script>
+
+    <!-- Google Font: Great Vibes -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Smooth fade-in effect -->
+    <style>
+      .fade-in {
+        animation: fadeIn 2s ease-in;
+      }
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+          transform: translateY(-10px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+      @keyframes glow {
+        0%,
+        100% {
+          box-shadow: 0 0 8px 2px rgba(255, 105, 180, 0.6);
+        }
+        50% {
+          box-shadow: 0 0 20px 6px rgba(255, 105, 180, 1);
+        }
+      }
+
+      .glowing {
+        animation: glow 3s ease-in-out infinite;
+      }
+    </style>
+  </head>
+  <!-- Sparkle Effect -->
+
+  <body
+    class="bg-gradient-to-b from-rose-100 via-pink-50 to-white text-gray-800"
+  >
+    <!-- Add this button somewhere in your HTML -->
+    <button
+      id="playMusicBtn"
+      class="px-4 py-2 bg-rose-600 text-white rounded fixed top-4 right-4 z-20"
+    >
+      🎵 Play Music
+    </button>
+
+    <audio id="bgMusic" loop style="display: none">
+      <source src="./assets/Wedding-music.mp3" type="audio/mpeg" />
+      Your browser does not support the audio element.
+    </audio>
+
+    <script>
+      const audio = document.getElementById("bgMusic");
+      const btn = document.getElementById("playMusicBtn");
+
+      btn.addEventListener("click", () => {
+        audio.style.display = "block";
+        audio.play();
+        btn.style.display = "none";
+      });
+    </script>
+
+    <canvas
+      id="sparkleCanvas"
+      class="fixed top-0 left-0 w-full h-full pointer-events-none z-0"
+    ></canvas>
+    <div class="relative z-10">
+      <div
+        class="bg-[url('./assets/banner.png')] bg-cover bg-center py-12 text-white text-center"
+      >
+        <h1
+          class="text-5xl font-bold text-rose-700"
+          style="font-family: 'Great Vibes', cursive"
+        >
+          💍 Radha 💞 Krishna 💍
+        </h1>
+        <p class="text-lg mt-2 text-gray-600">
+          Together Forever – August 8, 2025
+        </p>
+      </div>
+      <div class="text-center my-12 fade-in">
+        <h2 class="text-2xl font-bold text-rose-500 mb-2">
+          Countdown to Big Day
+        </h2>
+        <p id="countdown" class="text-xl font-mono text-gray-700"></p>
+      </div>
+
+      <!-- Photo Gallery -->
+      <!-- Photo Viewer with Click to Change -->
+      <!-- Auto-Slideshow Photo Viewer -->
+      <div class="flex justify-center mt-6 px-4 fade-in">
+        <img
+          id="photoViewer"
+          src="./assets/Radha.jpg"
+          class="rounded-2xl shadow-2xl w-full max-w-md border-4 border-white glowing transition-transform duration-300 hover:scale-105 cursor-pointer"
+          alt="Wedding Slideshow"
+          onclick="changePhoto()"
+        />
+      </div>
+      
+
+      <script>
+        const photos = [
+          "./assets/Radha.jpg",
+          "./assets/Vani.jpg",
+          "./assets/couple.jpg",
+          "./assets/Couple2.jpg",
+        ];
+
+        let index = 0;
+
+        // Function to change photo
+        function changePhoto() {
+          index = (index + 1) % photos.length;
+          document.getElementById("photoViewer").src = photos[index];
+        }
+
+        // Change photo every 2 seconds (2000 milliseconds)
+        setInterval(changePhoto, 2000);
+      </script>
+      <div class="my-10">
+        <hr class="border-t-4 border-rose-300 w-1/2 mx-auto rounded-full" />
+      </div>
+
+      <!-- Video Section -->
+      <div class="mt-10 px-4 text-center fade-in">
+        <h2 class="text-2xl font-semibold text-rose-500 mb-4">Wedding Video</h2>
+        <div class="aspect-w-16 aspect-h-9">
+          <video
+            class="w-full h-64 md:h-96 rounded-lg shadow-lg mx-auto"
+            autoplay
+            loop
+            
+            playsinline
+          >
+            <source src="./assets/telugu (1).mp4" type="video/mp4" />
+          </video>
+        </div>
+      </div>
+      <div class="text-center mt-10 fade-in">
+        <h2 class="text-2xl font-semibold text-rose-500 mb-2">
+          Wedding Location
+        </h2>
+        <p class="text-lg text-gray-700">
+          📍 Ramalayam Temple, Rajukunta, Andhra Pradesh
+        </p>
+        <a
+          href="tel:+91 9347237163"
+          class="inline-block mt-4 px-6 py-2 bg-rose-600 text-white font-semibold rounded-full shadow hover:bg-rose-700"
+        >
+          📞 Call to RSVP
+        </a>
+      </div>
+
+      <!-- Footer Message -->
+      <div class="mt-10 px-4 pb-10 text-center">
+        <p class="text-lg">
+          We would be happy to have you join us and bless the couple.
+        </p>
+        <p class="mt-2 text-rose-600 font-medium">
+          – With love, Radha Krishna's Family
+        </p>
+      </div>
+      <script>
+        const countDownDate = new Date("Aug 8, 2025 00:00:00").getTime();
+        const countdownEl = document.getElementById("countdown");
+
+        setInterval(() => {
+          const now = new Date().getTime();
+          const distance = countDownDate - now;
+
+          const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+          const hrs = Math.floor(
+            (distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
+          );
+          const mins = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+          const secs = Math.floor((distance % (1000 * 60)) / 1000);
+
+          countdownEl.innerText = `${days} Days ${hrs} Hours ${mins} Min ${secs} Sec`;
+        }, 1000);
+      </script>
+    </div>
+    <script>
+      const canvas = document.getElementById("sparkleCanvas");
+      const ctx = canvas.getContext("2d");
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
+
+      const sparkles = [];
+
+      function createSparkle() {
+        return {
+          x: Math.random() * canvas.width,
+          y: Math.random() * canvas.height,
+          radius: Math.random() * 1.5 + 1,
+          opacity: Math.random(),
+          fade: Math.random() * 0.02 + 0.01,
+        };
+      }
+
+      for (let i = 0; i < 100; i++) {
+        sparkles.push(createSparkle());
+      }
+
+      function draw() {
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        sparkles.forEach((s) => {
+          ctx.beginPath();
+          ctx.arc(s.x, s.y, s.radius, 0, Math.PI * 2);
+          ctx.fillStyle = `rgba(255, 192, 203, ${s.opacity})`;
+          ctx.fill();
+
+          s.opacity -= s.fade;
+          if (s.opacity <= 0) {
+            Object.assign(s, createSparkle());
+            s.opacity = 1;
+          }
+        });
+        requestAnimationFrame(draw);
+      }
+
+      draw();
+      window.addEventListener("resize", () => {
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+      });
+    </script>
+  </body>
+</html>

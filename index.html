@@ -4,18 +4,18 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>ℛ𝒶𝒹𝒽𝒶 𝒦𝓇𝒾𝓈𝒽𝓃𝒶 𝒲𝑒𝒹𝒹𝒾𝓃𝑔</title>
-    <!-- Tailwind CSS -->
+   
     <script src="https://cdn.tailwindcss.com"></script>
-    <!-- Add in <head> -->
+ 
     <script src="https://cdn.jsdelivr.net/npm/@srexi/purecounterjs/dist/purecounter_vanilla.js"></script>
 
-    <!-- Google Font: Great Vibes -->
+    
     <link
       href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap"
       rel="stylesheet"
     />
 
-    <!-- Smooth fade-in effect -->
+   
     <style>
       .fade-in {
         animation: fadeIn 2s ease-in;
@@ -45,12 +45,12 @@
       }
     </style>
   </head>
-  <!-- Sparkle Effect -->
+ 
 
   <body
     class="bg-gradient-to-b from-rose-100 via-pink-50 to-white text-gray-800"
   >
-    <!-- Add this button somewhere in your HTML -->
+   
     <button
       id="playMusicBtn"
       class="px-4 py-2 bg-rose-600 text-white rounded fixed top-4 right-4 z-20"
@@ -60,7 +60,7 @@
 
     <audio id="bgMusic" loop style="display: none">
       <source src="./assets/Wedding-music.mp3" type="audio/mpeg" />
-      Your browser does not support the audio element.
+     
     </audio>
 
     <script>
@@ -99,9 +99,7 @@
         <p id="countdown" class="text-xl font-mono text-gray-700"></p>
       </div>
 
-      <!-- Photo Gallery -->
-      <!-- Photo Viewer with Click to Change -->
-      <!-- Auto-Slideshow Photo Viewer -->
+    
       <div class="flex justify-center mt-6 px-4 fade-in">
         <img
           id="photoViewer"
@@ -123,13 +121,13 @@
 
         let index = 0;
 
-        // Function to change photo
+      
         function changePhoto() {
           index = (index + 1) % photos.length;
           document.getElementById("photoViewer").src = photos[index];
         }
 
-        // Change photo every 2 seconds (2000 milliseconds)
+        
         setInterval(changePhoto, 2000);
       </script>
       <div class="my-10">
@@ -144,7 +142,7 @@
             class="w-full h-64 md:h-96 rounded-lg shadow-lg mx-auto"
             autoplay
             loop
-            
+            controls
             playsinline
           >
             <source src="./assets/telugu (1).mp4" type="video/mp4" />
@@ -166,7 +164,7 @@
         </a>
       </div>
 
-      <!-- Footer Message -->
+   
       <div class="mt-10 px-4 pb-10 text-center">
         <p class="text-lg">
           We would be happy to have you join us and bless the couple.
@@ -241,3 +239,4 @@
     </script>
   </body>
 </html>
+
